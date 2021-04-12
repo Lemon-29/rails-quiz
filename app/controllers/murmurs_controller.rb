@@ -23,7 +23,7 @@ class MurmursController < ApplicationController
   end
 
   def confirm
-    @murmur = Murmur.new(tubuyaki_params)
+    @murmur = Murmur.new(murmur_params)
   end
 
   def edit
@@ -31,8 +31,8 @@ class MurmursController < ApplicationController
   end
 
   def update
-    if @murmur.update(tubuyaki_params)
-      redirect_to tubuyakis_path, notice: "Modified murmur！"
+    if @murmur.update(murmur_params)
+      redirect_to tubuyakis_path, notice: "Modified murmur"
     else
       render 'edit'
     end
@@ -40,7 +40,7 @@ class MurmursController < ApplicationController
 
 
   def destroy
-    @tubuyaki = Tubuyaki.find(params[:id])
+    @tubuyaki = Murmur.find(params[:id])
     @tubuyaki.destroy
     redirect_to murmur_path, notice: "Delited murmur"
   end
