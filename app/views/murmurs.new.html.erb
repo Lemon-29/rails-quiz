@@ -7,7 +7,7 @@
       <%= form_with(model: @murmur, local: true) do |form| %>
         <% if @murmur.errors.any? %>
           <div id="error_explanation">
-            <h2><%= @murmur.errors.count %>berror has occcurred</h2>
+            <h2><%= @murmur.errors.count %>error has occcurred</h2>
             <ul>
               <% @murmur.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
