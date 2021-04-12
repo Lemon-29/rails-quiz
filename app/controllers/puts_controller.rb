@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
   before_action :set_posts, only: [:edit,:destroy,:update,:show]
 
   def index
@@ -12,7 +12,7 @@ class PostController < ApplicationController
   def create
     @posts = Posts.new(maurmur_params)
     if @posts.save
-      redirect_to murmur_path, notice: "Tweeted！"
+      redirect_to posts_path, notice: "Tweeted！"
     else
       # render 'new'　after compiled, the view is called out to new.html.erb and changed
     end

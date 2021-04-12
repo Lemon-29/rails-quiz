@@ -1,0 +1,14 @@
+<h1>list of tweets
+  <br><%= link_to 'tweet something', new_puts_path %>
+</h1>
+<div class="contents">
+  <% @puts.each do |puts| %>
+    <br>
+      <li>
+        <%= puts.content %>
+        <br><%= link_to 'edit your tweet', edit_puts_path(puts.id) %>
+        <br><%= link_to 'delite your tweet', puts_path(puts.id), method: :delete %>
+      </li>
+    </ul>
+  <% end %>
+</div>
