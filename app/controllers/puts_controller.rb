@@ -1,17 +1,17 @@
-class MurmursController < ApplicationController
-  before_action :set_murmur, only: [:edit,:destroy,:update,:show]
+class PostController < ApplicationController
+  before_action :set_posts, only: [:edit,:destroy,:update,:show]
 
   def index
-    @puts = Puts.all
+    @posts = Posts.all
   end
 
   def new
-    @puts = Puts.new
+    @posts = Posts.new
   end
 
   def create
-    @puts = Puts.new(maurmur_params)
-    if @puts.save
+    @posts = Posts.new(maurmur_params)
+    if @posts.save
       redirect_to murmur_path, notice: "Tweeted！"
     else
       # render 'new'　after compiled, the view is called out to new.html.erb and changed
@@ -23,15 +23,15 @@ class MurmursController < ApplicationController
   end
 
   def confirm
-    @puts = Puts.new(murmur_params)
+    @posts = Posts.new(murmur_params)
   end
 
   def edit
-    @putsr = Puts.find(params[:id])
+    @posts = Posts.find(params[:id])
   end
 
   def update
-    if @puts.update(murmur_params)
+    if @posts.update(murmur_params)
       redirect_to tubuyakis_path, notice: "Modified puts"
     else
       render 'edit'
@@ -40,19 +40,19 @@ class MurmursController < ApplicationController
 
 
   def destroy
-    @puts = Puts.find(params[:id])
-    @puts.destroy
+    @posts = Posts.find(params[:id])
+    @posts.destroy
     redirect_to murmur_path, notice: "Delited tweet"
   end
 
   private
 
-  def puts_params
+  def posts_params
     params.require(:puts).permit(:content)
   end
 
-  def set_puts
-    @puts = Puts.find(params[:id])
+  def set_posts
+    @posts = Posts.find(params[:id])
   end
 
 end
