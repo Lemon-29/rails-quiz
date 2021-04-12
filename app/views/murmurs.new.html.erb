@@ -1,13 +1,13 @@
 <html>
   <body>
     <header>
-      <%= image_tag('japan.jpg') %>
+      <%= image_tag('') %>
     </header>
     <div class="main-contents">
       <%= form_with(model: @murmur, local: true) do |form| %>
-        <% if @tubuyaki.errors.any? %>
+        <% if @murmur.errors.any? %>
           <div id="error_explanation">
-            <h2><%= @murmur.errors.count %>。An error has occcurred</h2>
+            <h2><%= @murmur.errors.count %>berror has occcurred</h2>
             <ul>
               <% @murmur.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
