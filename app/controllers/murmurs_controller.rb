@@ -14,7 +14,7 @@ class MurmursController < ApplicationController
     if @murmur.save
       redirect_to murmur_path, notice: "Murmured！"
     else
-      render 'new'
+      render 'new'# 処理終了後に呼び出されるビューがnew.html.erbに変更される
     end
   end
 

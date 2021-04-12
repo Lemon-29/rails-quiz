@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <header>
+      <%= image_tag('japan.jpg') %>
+    </header>
+    <div class="main-contents">
+      <%= form_with(model: @murmur, local: true) do |form| %>
+        <% if @tubuyaki.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= @murmur.errors.count %>。An error has occcurred</h2>
+            <ul>
+              <% @murmur.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="tubuyaki_title" %>
+          <%= form.text_field :content %>
+        </div>
+        <%= form.submit("Murmur")%>
+        <br><%= link_to "Check the murmurs lists", murmurs_path %>
+      <% end %>
+    </div>
+    <footer class="footer">
+      <p>Copyright © 2021 L.Takahashi INC All RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>
