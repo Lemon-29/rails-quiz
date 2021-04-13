@@ -1,0 +1,10 @@
+# Query: pots
+# Flags: CaseSensitive
+# ContextLines: 1
+
+1 result - 1 file
+
+app/views/posts/_form.html.erb:
+  17      <%= form.submit("Tweet")%>
+  18:     <br><%= link_to "Check the post of lists", posts_path %>
+  19    <% end %>

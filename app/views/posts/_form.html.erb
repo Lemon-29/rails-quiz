@@ -1,0 +1,20 @@
+
+<div class="main-contents">
+  <%= form_with(model: @post, local: true) do |form| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @post.errors.count %>error has occcurred</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="post_title" %>
+      <%= form.text_field :content %>
+    </div>
+    <%= form.submit("Tweet")%>
+    <br><%= link_to "Check the pots lists", posts_path %>
+  <% end %>
+</div>

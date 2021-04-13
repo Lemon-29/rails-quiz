@@ -1,1 +1,14 @@
-<%= render 'form' %>
+<h2>detail of the posts you tweeted</h2>
+
+<%= @post.content %>
+
+<br>
+<%= link_to 'edit your tweet', edit_post_path(@post.id) %>
+        
+<br>
+<%= link_to 'delete your tweet', post_path(@post.id), method: :delete %>
+
+
+<br>
+
+<%= link_to 'back', posts_path %>

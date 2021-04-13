@@ -1,5 +1,7 @@
 class CreatPosts < ActiveRecord::Migration[5.2]
-  def change :Posts do |p|
-    p.text :content
+  def change 
+    create_table :posts do |t|
+      t.text :content
+    end
   end
 end

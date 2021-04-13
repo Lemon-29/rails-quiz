@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
   <head>
     <title>TwitterClone</title>
     <%= csrf_meta_tags %>
@@ -9,8 +9,23 @@
   </head>
 
   <body>
+  <div class = "wrapper">
+  　<header>
+    　<%= image_tag "head1.jpeg", class: "img_head2" %>
+    </header>
+    <div class = "main_body">
+
     <%= yield %>
+
+    </div>
+    <footer>
+    <%= image_tag "paris.jpeg", class: "img_foot" %>
+
+
+  <footer class="footer">
+    <p>Copyright © 2021 L.Takahashi INC All RIGHTS RESERVED.</p>
+      </footer>
+    </div> 
   </body>
 </html>
 
-</html>
