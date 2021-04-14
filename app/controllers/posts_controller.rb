@@ -56,13 +56,3 @@ class PostsController < ApplicationController
   end
 
 end
-
-# 'content' => :content
-
-# { content: 'ff' }[:content]
-
-
-# params => { content: 'ff' }
-
-
-# params => { post: { content: 'ff' }  }
