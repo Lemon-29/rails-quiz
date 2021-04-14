@@ -14,12 +14,11 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: "Tweeted！"
     else
-      render 'new'#after compiled, the view is called out to new.html.erb and changed
+      render 'new'
     end
   end
 
   def show
-
   end
 
   def confirm
@@ -37,7 +36,6 @@ class PostsController < ApplicationController
       render 'edit'
     end
   end
-
 
   def destroy
     @post = Post.find(params[:id])

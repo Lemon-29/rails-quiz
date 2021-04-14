@@ -1,6 +1,5 @@
-
 <div class="main-contents">
-  <%= form_with(model: @post, local: true) do |form| %>
+  <%= form_with(model: @post, local: true ,url: confirm_posts_path) do |form| %>
     <% if @post.errors.any? %>
       <div id="error_explanation">
         <h2><%= @post.errors.count %>error has occcurred</h2>
@@ -10,11 +9,13 @@
           <% end %>
         </ul>
       </div>
+    
     <% end %>
     <div class="post_title" %>
+    　<%= form.hidden_field :title %>
       <%= form.text_field :content %>
     </div>
     <%= form.submit("Tweet")%>
-    <br><%= link_to "Check the pots lists", posts_path %>
+    <br><%= link_to "Check the post of lists", posts_path %>
   <% end %>
 </div>

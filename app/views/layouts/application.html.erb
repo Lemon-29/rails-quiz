@@ -9,22 +9,13 @@
   </head>
 
   <body>
-  <div class = "wrapper">
-  　<header>
-    　<%= image_tag "head1.jpeg", class: "img_head2" %>
-    </header>
-    <div class = "main_body">
-
-    <%= yield %>
-
-    </div>
-    <footer>
-    <%= image_tag "paris.jpeg", class: "img_foot" %>
-
-
-  <footer class="footer">
-    <p>Copyright © 2021 L.Takahashi INC All RIGHTS RESERVED.</p>
-      </footer>
+    <div class = "wrapper">
+      <%= render "header" %>
+      <div class = "main_body">
+        <%= yield %>
+      </div>
+      <%= image_tag "paris.jpg", class: "img_foot" %>
+      <%= render "footer" %>
     </div> 
   </body>
 </html>
