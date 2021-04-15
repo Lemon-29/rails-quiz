@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: "Tweeted！"
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -52,5 +52,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end

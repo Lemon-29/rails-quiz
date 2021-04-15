@@ -2,29 +2,18 @@
   <button class="btn btn-secondary btn-lg" >new</button>
 <%end%>
 
-<h1>list of tweets</h1>
-  <br><%= link_to 'tweet something', new_post_path %>
-</h1>
-
-<h2>Paris Record</h2>
+<h2>Lisa's Record</h2>
 <div class="contents">
   <% @posts.each do |post| %>
     <div class="paris_post">
-    <div class="paris_icon">
-    <img src = "assets/paris.jpg">
-    </div>    
        
-    <div class = "rustling">
-        <div class = "comments">
-            <p><%= post.content %></p>
-        </div>
-    </div>
     <br>
       <li>
         <%= post.content %>
         <br><%= link_to 'see your tweet', post_path(post.id) %>
         <br><%= link_to 'edit your tweet', edit_post_path(post.id) %>
         <br><%= link_to 'delete your tweet', post_path(post.id), method: :delete %>
+        <br><%= link_to 'lists your tweet', post_path(post.id), method: :delete %>
       </li>
     </ul>
   <% end %>
