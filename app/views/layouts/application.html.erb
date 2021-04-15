@@ -8,13 +8,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+   <p1>TwitterClone</p2>
+  </header>
+
   <body>
     <div class = "wrapper">
       <%= render "header" %>
       <div class = "main_body">
         <%= yield %>
       </div>
-      <%= image_tag "paris.jpg", class: "img_foot" %>
       <%= render "footer" %>
     </div> 
   </body>

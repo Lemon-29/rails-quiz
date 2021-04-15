@@ -1,7 +1,10 @@
 <h3>Are you sure you wanna post it?</h3>
-<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
-  <%=form.hidden_field :content%>
-  <p>text:<%= @post.content%></p>
-  <%= form.submit "post"%>
-  <%= form.submit "back", name: "back"%>
+<%= form_with(model: @post, url: posts_path, local: true)  do |form| %>
+    <%=form.hidden_field :content%>
+    <%= form.text_field :content %>
+    <p>text:<%= @post.content%></p>
+    <%= form.submit "post"%>
+<% end %>
+<%= form_with(model: @post, url: new_post_path, method: 'get', local: true)  do |form| %>
+    <%= form.submit 'Back', name: 'back' %>
 <% end %>
